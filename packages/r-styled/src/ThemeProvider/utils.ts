@@ -1,11 +1,19 @@
-const toHyphen = (name: string) =>
+import {
+  DefaultDarkThemes,
+  DefaultLightThemes,
+  DefaultThemePrefix,
+} from './tokens';
+
+export const toHyphen = (name: string) =>
   name.replace(/[A-Z]/g, (x) => `-${x.toLocaleLowerCase()}`);
-const checkDark = () =>
+export const checkDark = () =>
   window.window.matchMedia('(prefers-color-scheme: dark)').matches;
-// init css variable ...
-const updateThemeVariable = (token?: StyledThemeToken) => {
-  const initTheme = checkDark() ? DefaultDarkThemes : DefaultLightThemes;
-  Object.entries(initTheme).forEach(([key, value]) => {
+/**
+ * init css variable ...
+ */
+export const updateThemeVariable = (token?: StyledThemeToken) => {
+  token = token || checkDark() ? DefaultDarkThemes : DefaultLightThemes;
+  Object.entries(token).forEach(([key, value]) => {
     if (typeof value === 'string') {
       document.documentElement.style.setProperty(
         toHyphen(`--${DefaultThemePrefix}-${key}`),
@@ -21,3 +29,6 @@ const updateThemeVariable = (token?: StyledThemeToken) => {
     }
   });
 };
+
+// init css variable with default coloring and the correct theme key (light or dark)
+updateThemeVariable();

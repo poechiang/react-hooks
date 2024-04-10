@@ -1,7 +1,18 @@
 declare type Align = 'start' | 'end' | 'center' | 'stretch' | 'baseline';
 declare type Size = 'small' | 'medium' | 'large';
 declare type Sizable = Size | number | string;
-declare type RSProps = {
+
+declare interface RSProps {
+  className?: string;
+  style?: React.CSSProperties;
+  classes?: Record<string, boolean>;
+}
+
+declare interface RSProviderProps extends RSProps {
+  children?: React.ReactNode;
+}
+
+declare interface RSLayoutProps extends RSProps {
   className?: string;
   style?: React.CSSProperties;
   classes?: Record<string, boolean>;
@@ -22,7 +33,7 @@ declare type RSProps = {
   margin?: Sizable | Sizable[];
   marginBlock?: Sizable | Sizable[];
   marginInline?: Sizable | Sizable[];
-};
-declare type RSContainerProps = RSProps & {
+}
+declare interface RSContainerProps extends RSLayoutProps {
   children?: React.ReactNode;
-};
+}
