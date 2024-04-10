@@ -1,0 +1,27 @@
+@import url(./variable.less);
+:root {
+  --rsc-color-primary: #1677ff;
+  --rsc-color-layout: #f6f7f9;
+  --rsc-color-container: #ffffff;
+  --rsc-color-text: #000000;
+  --rsc-color-border: #d9d9d9;
+  --rsc-color-split: #f0f0f0;
+  --rsc-color-success: #52c41a;
+  --rsc-color-info: #1677ff;
+  --rsc-color-warning: #faad14;
+  --rsc-color-error: #ff4d4f;
+  --rsc-color-link: #1677ff;
+}
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --rsc-color-primary: #1677ff;
+    --rsc-color-layout: #000000;
+    --rsc-color-container: #141414;
+    --rsc-color-text: #ffffff;
+    --rsc-color-border: #424242;
+    --rsc-color-split: #303030;
+  }
+}
+
+/* 在这里使用@colorPrimary等变量 */
+@import url(./init.less);
