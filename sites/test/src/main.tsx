@@ -1,3 +1,4 @@
+import { ScopeProvider } from "r-styled";
 import "r-styled/themes/styles/index.less";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -6,6 +7,8 @@ import App from "./App.tsx";
 
 ReactDOM.createRoot(document.querySelector("app-root")!).render(
   <React.StrictMode>
-    <App />
+    <ScopeProvider>
+      <App />
+    </ScopeProvider>
   </React.StrictMode>
 );

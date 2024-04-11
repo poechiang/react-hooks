@@ -31,7 +31,7 @@ declare type StyledThemeToken = Partial<
 };
 
 declare type ThemeKey = 'light' | 'dark';
-declare type PresetColoringKey = 'polar';
+declare type PresetColoringKey = 'default' | 'polar';
 declare type ColoringKey = PresetColoringKey | string;
 
 declare type StyledThemes = Record<
@@ -41,6 +41,7 @@ declare type StyledThemes = Record<
 declare interface RSThemeProviderProps extends RSProviderProps {
   theme?: ThemeKey;
   coloring?: ColoringKey;
+  token?: Record<ThemeKey, StyledThemeToken>;
 }
 declare interface IThemeContext {
   currentTheme?: StyledThemeToken;

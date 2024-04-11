@@ -19,7 +19,9 @@ function App() {
       <View mainAlign="center">Styled React Components</View>
 
       <View mainAlign="center" flex="row" gap={PresetSize.MEDIUM} margin={PresetSize.MEDIUM}>
-        <Button radius="medium">Themes</Button>
+        <Button radius="medium" type="link">
+          Themes
+        </Button>
         <Button>Hooks</Button>
         <Button>Components</Button>
       </View>

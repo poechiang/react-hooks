@@ -11,7 +11,7 @@ export const ViewRadiusMap: Record<PresetSize, string> = {
 export const radiusProps = (props: { radius?: Size | number | string }) => {
   {
     const radius = ViewRadiusMap[props?.radius as PresetSize] ?? props?.radius;
-    console.log('radius', radius);
+
     if (!radius) {
       return 0;
     }

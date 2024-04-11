@@ -1,5 +1,6 @@
 declare type ButtonProps = RSContainerProps & {
-  theme?:
+  theme: StyledThemeToken;
+  type?:
     | 'ghost'
     | 'primary'
     | 'warning'

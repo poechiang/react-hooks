@@ -30,5 +30,6 @@ export const updateThemeVariable = (token?: StyledThemeToken) => {
   });
 };
 
-// init css variable with default coloring and the correct theme key (light or dark)
-updateThemeVariable();
+export const getToken = (key: StyledThemeProperties, value: string) => {
+  return value ?? DefaultLightThemes[key];
+};

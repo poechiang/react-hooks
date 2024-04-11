@@ -13,7 +13,7 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: path.resolve(__dirname, './src/ThemeProvider/styles') + '/[!.]*',
+          src: path.resolve(__dirname, './src/ScopeProvider/styles') + '/[!.]*',
           dest: './styles/',
         },
       ],
