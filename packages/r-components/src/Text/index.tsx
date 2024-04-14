@@ -1,8 +1,8 @@
-import { useClassName } from '@jeffchi/r-hooks';
 import { FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { DefaultDarkThemes, DefaultLightThemes } from '../ScopeProvider/tokens';
 import { checkDark } from '../common';
+import { useClassName } from '../hooks/useClassName';
 import { colorProps, fontSizeProps, textAlignProps } from './props';
 
 const StyledText = styled.span<TextProps>`
