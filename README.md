@@ -1,6 +1,7 @@
 # @jeffchi/react-pkg
 
 [![release-please-action](https://github.com/poechiang/react-pkg/actions/workflows/release-please.yml/badge.svg?branch=main)](https://github.com/poechiang/react-pkg/actions/workflows/release-please.yml)
+[![Publish Package to npmjs](https://github.com/poechiang/react-pkg/actions/workflows/depoly-npm.yml/badge.svg?branch=main&event=public)](https://github.com/poechiang/react-pkg/actions/workflows/depoly-npm.yml)
 
 A library for building React components with styled-components and styled-system.Includes Themes, Hooks & Components.
 
