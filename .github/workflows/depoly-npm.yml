@@ -13,15 +13,13 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Install
-        run: npm install
-      - name: Npm ci
-        run: npm ci
-      - name: Build in packages/
+      - name: Install CI and Build in packages/
         run: |
           for dir in packages/*; do
             if [ -d "$dir" ]; then
               cd "$dir"
+              npm install
+              npm ci
               npm run build
               cd -
             fi
