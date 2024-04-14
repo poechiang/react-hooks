@@ -1,7 +1,18 @@
 {
-  "name": "@jeffchi/react",
+  "name": "@jeffchi/react-pkg",
   "version": "0.0.0",
   "private": true,
+  "git": "https://github.com/poechiang/react-pkg.git",
+  "description": "React 相关工具库",
+  "keywords": [
+    "react"
+  ],
+  "author": "jeffchi <jeffchi@163.com>",
+  "homepage": "https://github.com/poechiang/react-pkg#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "workspaces": {
     "packages": [
       "packages/*",
