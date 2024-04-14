@@ -1,7 +1,11 @@
 name: NPM
+# on:
+#  release:
+#    types: [published]
+
 on:
-  release:
-    types: [published]
+  push:
+    branches: ['main']
 jobs:
   build:
     runs-on: ubuntu-latest
