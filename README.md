@@ -1,5 +1,7 @@
 # @jeffchi/react-pkg
 
+[![release-please-action](https://github.com/poechiang/react-pkg/actions/workflows/release-please.yml/badge.svg?branch=main)](https://github.com/poechiang/react-pkg/actions/workflows/release-please.yml)
+
 A library for building React components with styled-components and styled-system.Includes Themes, Hooks & Components.
 
 ## 特性
