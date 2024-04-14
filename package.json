@@ -1,6 +1,6 @@
 {
   "name": "@jeffchi/react-pkg",
-  "version": "0.0.1",
+  "version": "1.0.8",
   "git": "https://github.com/poechiang/react-pkg.git",
   "description": "React 相关工具库",
   "keywords": [
