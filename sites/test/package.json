@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@jeffchi/r-components": "*",
+    "@jeffchi/r-hooks": "*",
     "highlight.js": "^11.9.0",
     "react": "^18.2.0",
-    "@jeffchi/r-hooks": "*",
-    "@jeffchi/r-components": "*",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
