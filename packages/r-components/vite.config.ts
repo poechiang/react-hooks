@@ -25,9 +25,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'RStyled',
+      name: 'RComponents',
       formats: ['es', 'umd'],
-      fileName: (format) => `r-styled.${format}.js`,
+      fileName: (format) => `r-components.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'styled-components'],

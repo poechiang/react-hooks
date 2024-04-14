@@ -1,13 +1,13 @@
+import { Button, PresetSize, ScopeProvider, Text, View } from "@jeffchi/r-components";
 import hljs from "highlight.js";
 import "highlight.js/styles/a11y-light.css";
-import { Button, PresetSize, ScopeProvider, Text, View } from "r-styled";
+import { useEffect } from "react";
 import "./assets/global.less";
 import reactLogo from "./assets/react.svg";
 import storyLogo from "./assets/story.svg";
 import styledLogo from "./assets/styled.svg";
-import viteLogo from "/vite.svg";
-import { useEffect } from "react";
 import "./debug";
+import viteLogo from "/vite.svg";
 function App() {
   useEffect(() => {
     hljs.highlightAll();

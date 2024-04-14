@@ -1,5 +1,5 @@
 {
-  "name": "r-styled",
+  "name": "@jeffchi/r-components",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,7 +14,6 @@
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.2",
     "color": "^4.2.3",
-    "r-hooks": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.8"
@@ -55,13 +54,13 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/r-styled.umd.js",
-  "module": "./dist/r-styled.es.js",
+  "main": "./dist/r-components.umd.js",
+  "module": "./dist/r-components.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/r-styled.es.js",
-      "require": "./dist/r-styled.umd.js",
+      "import": "./dist/r-components.es.js",
+      "require": "./dist/r-components.umd.js",
       "types": "./dist/index.d.ts"
     },
     "./themes/*": {

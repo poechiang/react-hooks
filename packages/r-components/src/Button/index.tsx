@@ -1,4 +1,4 @@
-import { useClassName } from 'r-hooks';
+import { useClassName } from '@jeffchi/r-hooks';
 import { FC } from 'react';
 import styled from 'styled-components';
 import { DefaultDarkThemes, DefaultLightThemes } from '../ScopeProvider/tokens';
