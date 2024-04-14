@@ -1,11 +1,12 @@
 {
   "name": "@jeffchi/react-pkg",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
   "git": "https://github.com/poechiang/react-pkg.git",
   "description": "React 相关工具库",
   "keywords": [
-    "react"
+    "react",
+    "hooks",
+    "components"
   ],
   "author": "jeffchi <jeffchi@163.com>",
   "homepage": "https://github.com/poechiang/react-pkg#readme",
