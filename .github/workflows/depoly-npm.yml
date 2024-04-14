@@ -14,7 +14,13 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
-      - run: npm ci && npm run build
+      - run: npm ci
+      
+      - name: npm adduser
+        run: npm adduser
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
