@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/poechiang/react-pkg/compare/v1.2.2...v1.3.0) (2024-04-14)
+
+
+### Features
+
+* remove lock file ([d6f6177](https://github.com/poechiang/react-pkg/commit/d6f6177e42b485fdfe236a7683cad31201ee48e1))
+
 ## [1.2.0](https://github.com/poechiang/react-pkg/compare/v1.1.5...v1.2.0) (2024-04-14)
 
 
