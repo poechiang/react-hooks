@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/poechiang/react-pkg/compare/v1.1.3...v1.1.4) (2024-04-14)
+
+
+### Bug Fixes
+
+* fix github action ([6fb77ff](https://github.com/poechiang/react-pkg/commit/6fb77ff9a9cb9ba6354583a5cb4dbd63906eead8))
+
 ## 1.0.0 (2024-04-14)
 
 
