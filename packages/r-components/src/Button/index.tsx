@@ -1,9 +1,9 @@
-import { useClassName } from '@jeffchi/r-hooks';
 import { FC } from 'react';
 import styled from 'styled-components';
 import { DefaultDarkThemes, DefaultLightThemes } from '../ScopeProvider/tokens';
 import { checkDark } from '../common';
 import { radiusProps } from '../common/props';
+import { useClassName } from '../hooks/useClassName';
 import {
   backgroundColorHoverProps,
   backgroundColorProps,
