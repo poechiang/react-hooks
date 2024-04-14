@@ -17,9 +17,12 @@ jobs:
       - run: npm ci
       
       - name: npm adduser
-        run: npm adduser
+        run: npm adduser --registry https://registry.npmjs.org/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_USERNAME: ${{ secrets.NPM_USER }}
+          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
+          NPM_PASSWORD: ${{ secrets.NPM_PWD }}
           
       - run: npm publish
         env:
