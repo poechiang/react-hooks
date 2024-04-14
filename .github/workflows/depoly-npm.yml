@@ -13,8 +13,19 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm install
-      - run: npm ci
+      - name: Install
+        run: npm install
+      - name: Npm ci
+        run: npm ci
+      - name: Build in packages/
+        run: |
+          for dir in packages/*; do
+            if [ -d "$dir" ]; then
+              cd "$dir"
+              npm run build
+              cd -
+            fi
+          done
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
