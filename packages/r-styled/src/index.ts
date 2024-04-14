@@ -3,8 +3,9 @@ import { updateThemeVariable } from './ScopeProvider/utils';
 export * from './ScopeProvider';
 
 export * from './Button';
+export * from './Text';
 export * from './View';
-export { PresetSize } from './common/props';
+export * from './common';
 
 // init css variable with default coloring and the correct theme key (light or dark)
 updateThemeVariable();

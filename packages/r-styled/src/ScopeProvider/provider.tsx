@@ -1,25 +1,21 @@
-import { useStorage } from 'r-hooks';
-import { FC, useEffect, useState } from 'react';
-
 import { merge } from 'lodash';
+import { FC, useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { checkDark } from '../common';
 import { DefaultDarkThemes, DefaultLightThemes } from './tokens';
 import { ThemeContext } from './useScope';
-import { checkDark, updateThemeVariable } from './utils';
-const APP_THEME = 'rscTheme';
-const APP_COLORING = 'rscColoring';
+
 export const ScopeProvider: FC<RSThemeProviderProps> = ({
   children,
   ...props
 }) => {
-  const { local } = useStorage();
   const [themeMapInst, setThemeMapInst] = useState<StyledThemes>({
     default: {
       light: DefaultLightThemes,
       dark: DefaultDarkThemes,
     },
   });
-  const [currentTheme, setCurrentTheme] = useState<StyledThemeToken>(null!);
+  const [currentToken, setCurrentToken] = useState<StyledThemeToken>(null!);
   const [themeKey, setThemeKey] = useState(props.theme);
   const [coloringKey, setColoringKey] = useState(props.coloring);
 
@@ -41,23 +37,20 @@ export const ScopeProvider: FC<RSThemeProviderProps> = ({
 
   useEffect(() => {
     const isDark = checkDark();
-    const theme = themeKey ?? local(APP_THEME) ?? (isDark ? 'dark' : 'light');
+    const theme = themeKey ?? (isDark ? 'dark' : 'light');
 
-    const coloring = coloringKey ?? local(APP_COLORING) ?? 'default';
+    const coloring = coloringKey ?? 'default';
     const colorings = themeMapInst[coloring] ?? {
       light: DefaultLightThemes,
       dark: DefaultDarkThemes,
     };
     const token = merge({}, colorings[theme as ThemeKey], props.token);
-    setCurrentTheme(token);
-    updateThemeVariable(token);
 
-    local(APP_COLORING, coloringKey);
-    local(APP_THEME, themeKey);
-  }, [themeMapInst, coloringKey, themeKey, local, props.token]);
+    setCurrentToken(token);
+  }, [themeMapInst, coloringKey, themeKey, props.token]);
   return (
-    <ThemeContext.Provider value={{ currentTheme, use, register }}>
-      <ThemeProvider theme={currentTheme || {}}>{children}</ThemeProvider>
+    <ThemeContext.Provider value={{ token: currentToken, use, register }}>
+      <ThemeProvider theme={currentToken || {}}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );
 };

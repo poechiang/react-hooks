@@ -1,16 +1,11 @@
 {
   "name": "@jeffchi/react-libs",
+  "version": "0.0.0",
   "private": true,
   "workspaces": {
     "packages": [
       "packages/*",
       "sites/*"
     ]
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.17.0"
   }
 }

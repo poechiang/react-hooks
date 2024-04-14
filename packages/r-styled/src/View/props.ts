@@ -1,5 +1,6 @@
-import { PresetSize } from '../common/props';
-
+import Color from 'color';
+import { PresetSize } from '../common/enums';
+import { borderProps as commonBorderProps } from '../common/props';
 export const ViewGapMap: Record<PresetSize, string> = {
   [PresetSize.SMALL]: '8px',
   [PresetSize.MEDIUM]: '16px',
@@ -7,14 +8,14 @@ export const ViewGapMap: Record<PresetSize, string> = {
 };
 
 export const gapProps = (props: ViewProps) => {
-  let gap = ViewGapMap[props?.gap as PresetSize] ?? props?.gap;
+  const gap = ViewGapMap[props?.gap as PresetSize] ?? props?.gap;
   if (!gap) {
     return 0;
   }
   return typeof gap === 'number' ? `${gap}px` : gap;
 };
 export const heightProps = (props: ViewProps) => {
-  let height = props.height;
+  const height = props.height;
   if (height) {
     return typeof height === 'string' ? height : `${height}px`;
   } else {
@@ -23,12 +24,24 @@ export const heightProps = (props: ViewProps) => {
       : 'auto';
   }
 };
-
+export const backgroundColorProps = (props: ViewProps) => {
+  if (props.type === 'ghost') {
+    return 'transparent';
+  } else if (props.type === 'block') {
+    return props.theme?.colorContainer ?? props.theme?.View?.colorContainer;
+  } else if (props.type === 'code') {
+    return Color(
+      props.theme?.colorContainer ?? props.theme?.View?.colorContainer,
+    )
+      .darken(0.1)
+      .hex();
+  }
+};
 export const justifyContnetProps = (props: ViewProps) => {
   if (!props.flex) {
-    return 'unset';
+    return null;
   } else {
-    return props.mainAlign || 'unset';
+    return props.mainAlign || null;
   }
 };
 export const textAlignProps = (props: ViewProps) => {
@@ -48,9 +61,9 @@ export const alignItemsProps = (props: ViewProps) => {
 
 export const verticalAlignProps = (props: ViewProps) => {
   if (!props.flex) {
-    return props.crossAlign || 'unset';
+    return props.crossAlign;
   } else {
-    return 'unset';
+    return null;
   }
 };
 
@@ -71,11 +84,13 @@ const calcMarginPadding = (
   inline: Sizable[],
   block: Sizable[],
 ) => {
+  // eslint-disable-next-line prefer-const
   let [inlineStart, inlineEnd] = inline;
   if (inline?.length === 1) {
     inlineEnd = inlineStart;
   }
 
+  // eslint-disable-next-line prefer-const
   let [blockStart, blockEnd] = block;
   if (block?.length === 1) {
     blockEnd = blockStart;
@@ -93,7 +108,6 @@ const calcMarginPadding = (
   } else if (full?.length === 3) {
     left = right;
   }
-
   top = blockStart || top;
   right = inlineEnd || right;
   bottom = blockEnd || bottom;
@@ -130,10 +144,18 @@ export const paddingProps = (props: ViewProps) => {
       ? props.paddingBlock
       : [props.paddingBlock, props.paddingBlock]
   ) as Sizable[];
+  const paddingPropValue =
+    props.padding ?? (props.type === 'code' ? [8, 16] : null);
   const padding = (
-    Array.isArray(props.padding)
-      ? props.padding
-      : [props.padding, props.padding, props.padding, props.padding]
+    Array.isArray(paddingPropValue)
+      ? paddingPropValue
+      : [paddingPropValue, paddingPropValue, paddingPropValue, paddingPropValue]
   ) as Sizable[];
+
   return calcMarginPadding(padding, inline, block);
+};
+
+export const borderProps = (props: RSLayoutProps) => {
+  const border = props.border ?? false;
+  return commonBorderProps({ ...props, border });
 };

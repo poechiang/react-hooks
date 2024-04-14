@@ -13,7 +13,9 @@ declare type StyledComponentThemeProperties =
   | 'colorSplit'
   | 'borderRadius'
   | 'borderWidth'
+  | 'borderStyle'
   | 'fontSize';
+
 declare type StyledThemeProperties =
   | 'colorPrimary'
   | 'colorLayout'
@@ -24,10 +26,11 @@ declare type StyledThemeProperties =
   | 'colorLink'
   | StyledComponentThemeProperties;
 
-declare type StyledThemeToken = Partial<
-  Record<StyledThemeProperties, string>
-> & {
-  [x in StyledComponentMap]?: Partial<Record<StyledThemeProperties, string>>;
+type ThemeToken = Partial<Record<StyledThemeProperties, string>> & {
+  radiusMap?: Record<Size, string | number>;
+};
+declare type StyledThemeToken = ThemeToken & {
+  [x in StyledComponentMap]?: ThemeToken;
 };
 
 declare type ThemeKey = 'light' | 'dark';
@@ -44,7 +47,7 @@ declare interface RSThemeProviderProps extends RSProviderProps {
   token?: Record<ThemeKey, StyledThemeToken>;
 }
 declare interface IThemeContext {
-  currentTheme?: StyledThemeToken;
+  token?: StyledThemeToken;
   register?: (
     coloring: ColoringKey,
     tokens: Record<ThemeKey, StyledThemeToken>,

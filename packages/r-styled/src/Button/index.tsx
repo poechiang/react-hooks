@@ -1,32 +1,51 @@
 import { useClassName } from 'r-hooks';
 import { FC } from 'react';
 import styled from 'styled-components';
-import { borderProps, radiusProps } from '../common/props';
-import { backgroundColorProps, colorProps } from './props';
+import { DefaultDarkThemes, DefaultLightThemes } from '../ScopeProvider/tokens';
+import { checkDark } from '../common';
+import { radiusProps } from '../common/props';
+import {
+  backgroundColorHoverProps,
+  backgroundColorProps,
+  borderProps,
+  colorProps,
+  heightProps,
+} from './props';
 
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.button<StyledButtonProps>`
   border: ${borderProps};
   border-radius: ${radiusProps};
   background-color: ${backgroundColorProps};
   color: ${colorProps};
-  padding: 0.75rem;
+  padding: 0 0.75rem;
+  height: ${heightProps};
   cursor: pointer;
   &:hover {
-    background-color: #0a558c;
+    background-color: ${backgroundColorHoverProps};
   }
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #62b0e8;
     background-color: #0a558c;
   }
 `;
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = ({
+  type = 'default',
+  htmlType = 'button',
+  children,
+  ...props
+}) => {
   const className = useClassName(props);
-
   return (
-    <StyledButton type="button" {...{ ...props, className }}>
-      {props.children}
+    <StyledButton
+      type={htmlType}
+      {...{ ...props, className, styledType: type }}
+    >
+      {children}
     </StyledButton>
   );
+};
+
+StyledButton.defaultProps = {
+  theme: checkDark() ? DefaultDarkThemes : DefaultLightThemes,
 };

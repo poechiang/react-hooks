@@ -13,6 +13,7 @@ declare interface RSProviderProps extends RSProps {
 }
 
 declare interface RSLayoutProps extends RSProps {
+  theme?: StyledThemeToken;
   className?: string;
   style?: React.CSSProperties;
   classes?: Record<string, boolean>;

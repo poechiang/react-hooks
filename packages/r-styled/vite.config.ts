@@ -17,6 +17,9 @@ export default defineConfig({
           dest: './styles/',
         },
       ],
+      watch: {
+        reloadPageOnChange: true,
+      },
     }),
   ],
   build: {
