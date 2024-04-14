@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/poechiang/react-pkg/compare/v1.1.5...v1.2.0) (2024-04-14)
+
+
+### Features
+
+* add useClassName ([20491bc](https://github.com/poechiang/react-pkg/commit/20491bcdae35ba37831de0ba8ed1a97878709f58))
+
 ## [1.1.4](https://github.com/poechiang/react-pkg/compare/v1.1.3...v1.1.4) (2024-04-14)
 
 
