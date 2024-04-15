@@ -53,9 +53,6 @@
     "react-dom": "^16.8.0 || 18.x",
     "styled-components": "^6.1.8"
   },
-  "files": [
-    "dist"
-  ],
   "main": "./dist/r-components.umd.js",
   "module": "./dist/r-components.es.js",
   "types": "./dist/index.d.ts",

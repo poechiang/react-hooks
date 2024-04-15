@@ -35,9 +35,6 @@
     "react-dom": "^16.8.0 || 18.x",
     "styled-components": "^6.1.8"
   },
-  "files": [
-    "dist"
-  ],
   "main": "./dist/r-hooks.umd.js",
   "module": "./dist/r-hooks.es.js",
   "types": "./dist/index.d.ts",
