@@ -27,8 +27,5 @@ export default defineConfig({
         },
       },
     },
-    watch: {
-      include: "src/**",
-    },
   },
 });
