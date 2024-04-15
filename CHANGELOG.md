@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.9](https://github.com/poechiang/react-pkg/compare/v1.3.8...v1.3.9) (2024-04-15)
+
+
+### Bug Fixes
+
+* update release npm yml ([ba492b7](https://github.com/poechiang/react-pkg/commit/ba492b7c3e42974c3a5f45460908c5a933302b80))
+* update release npm yml 2 ([9d7e200](https://github.com/poechiang/react-pkg/commit/9d7e20034d8d619e5962c2ff7c80c8f99f03c4b3))
+* update release npm yml 3 ([e630de0](https://github.com/poechiang/react-pkg/commit/e630de08178e3c0607742d3bbc12e13feacf8f76))
+* update release npm yml 4 ([86e73ec](https://github.com/poechiang/react-pkg/commit/86e73ec896111957634f9218b5234b48f3fe5705))
+* update release npm yml 5 ([c8e875e](https://github.com/poechiang/react-pkg/commit/c8e875eaa3c2a8f6f6de061d69699e36648b05e1))
+
 ## [1.3.8](https://github.com/poechiang/react-pkg/compare/v1.3.7...v1.3.8) (2024-04-15)
 
 
