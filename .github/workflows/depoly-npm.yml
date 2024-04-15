@@ -23,7 +23,7 @@ jobs:
             if [ -d "$dir" ]; then
               cd "$dir"
               npm run build
-              cd -
+              cd ..
             fi
           done
       - run: npm publish
