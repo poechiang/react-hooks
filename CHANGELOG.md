@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.11](https://github.com/poechiang/react-pkg/compare/v1.3.10...v1.3.11) (2024-04-15)
+
+
+### Bug Fixes
+
+* update release npm yml 7 ([92aaa0f](https://github.com/poechiang/react-pkg/commit/92aaa0f36ec6ca0c6523f08644cdce72574735b9))
+
 ## [1.3.10](https://github.com/poechiang/react-pkg/compare/v1.3.9...v1.3.10) (2024-04-15)
 
 
