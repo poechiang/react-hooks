@@ -18,7 +18,6 @@ jobs:
           release-to-npm: true
           release-prerelease: false
           release-version: ${{ github.ref }}
-          release-branch: ${{ github.ref }}
           release-pr-labels: 'chore: release'
       # Checkout
       - uses: actions/checkout@v3
