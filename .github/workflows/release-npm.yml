@@ -1,8 +1,9 @@
+#
+name: release-npm
 on:
   push:
     branches:
       - main
-name: release-npm
 jobs:
   release-please:
     runs-on: ubuntu-latest
