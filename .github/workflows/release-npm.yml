@@ -11,7 +11,14 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: release-please-action
+          package-name: @jeffchi/react-pkg
+          release-pr-title: 'chore: release'
+          release-pr-body: 'chore: release'
+          release-to-npm: true
+          release-prerelease: false
+          release-version: ${{ github.ref }}
+          release-branch: ${{ github.ref }}
+          release-pr-labels: 'chore: release'
       # Checkout
       - uses: actions/checkout@v3
         if: ${{ steps.release.outputs.release_created }}
