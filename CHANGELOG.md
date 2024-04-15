@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.8](https://github.com/poechiang/react-pkg/compare/v1.3.7...v1.3.8) (2024-04-15)
+
+
+### Bug Fixes
+
+* update node version ([b21f6bd](https://github.com/poechiang/react-pkg/commit/b21f6bdd060c2fc628118c16e2934a99160712dd))
+* update npm yml ([52e1e02](https://github.com/poechiang/react-pkg/commit/52e1e0227aabf7eb76c6a1a9eb4f006ef8bb7f28))
+
 ## [1.3.0](https://github.com/poechiang/react-pkg/compare/v1.2.2...v1.3.0) (2024-04-14)
 
 
