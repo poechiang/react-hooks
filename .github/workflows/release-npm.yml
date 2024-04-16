@@ -42,14 +42,7 @@ jobs:
 
       # Build output
       - name: Build in packages/
-        run: |
-          for dir in packages/*; do
-            if [ -d "$dir" ]; then
-              cd "$dir"
-              npm run build
-              cd -
-            fi
-          done
+        run: npm run build
         if: ${{ steps.release.outputs.release_created }}
       # Publish to npm
       - run: npm publish
