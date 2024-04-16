@@ -11,6 +11,11 @@
   "author": "jeffchi <jeffchi@163.com>",
   "homepage": "https://github.com/poechiang/react-pkg#readme",
   "license": "MIT",
+  "scripts": {
+    "dev": "npm run build:watch --workspace=r-components & npm run build:watch --workspace=r-hooks  & npm run dev --workspace=test",
+    "build": "npm run build --workspaces",
+    "preview": "npm run preview --workspaces --if-present"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -18,10 +23,30 @@
     "packages/r-components/dist",
     "packages/r-hooks/dist"
   ],
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "sites/*"
-    ]
+  "workspaces": [
+    "packages/r-hooks",
+    "packages/r-components",
+    "sites/test"
+  ],
+  "types": "./packages/*/dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./packages/*/dist/*.es.js",
+      "require": "./packages/*/dist/*.umd.js",
+      "types": "./packages/*/dist/**/*.d.ts"
+    },
+    "./hooks": {
+      "import": "./packages/r-hooks/dist/*.es.js",
+      "require": "./packages/r-hooks/dist/*.umd.js",
+      "types": "./packages/r-hooks/dist/**/*.d.ts"
+    },
+    "./components": {
+      "import": "./packages/r-components/dist/*.es.js",
+      "require": "./packages/r-components/dist/*.umd.js",
+      "types": "./packages/r-components/dist/**/*.d.ts"
+    },
+    "./themes/*": {
+      "import": "./packages/*/dist/**/*.less"
+    }
   }
 }
