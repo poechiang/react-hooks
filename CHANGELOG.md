@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/poechiang/react-pkg/compare/v1.3.11...v1.4.0) (2024-04-17)
+
+
+### Features
+
+* add release yml ([0893abd](https://github.com/poechiang/react-pkg/commit/0893abd434b7489a84a09cfcfbc087f8f545f08a))
+
+
+### Bug Fixes
+
+* unable to import for use ([6f921e0](https://github.com/poechiang/react-pkg/commit/6f921e0150569a9e1afea4c50200985340a618af))
+
 ## [1.3.11](https://github.com/poechiang/react-pkg/compare/v1.3.10...v1.3.11) (2024-04-15)
 
 
