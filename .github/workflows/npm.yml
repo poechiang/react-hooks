@@ -1,5 +1,5 @@
 #
-name: release-npm
+name: npm
 on:
   push:
     branches:
