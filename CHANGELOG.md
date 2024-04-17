@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.12](https://github.com/poechiang/react-pkg/compare/v1.3.11...v1.3.12) (2024-04-17)
+
+
+### Bug Fixes
+
+* unable to import for use ([6f921e0](https://github.com/poechiang/react-pkg/commit/6f921e0150569a9e1afea4c50200985340a618af))
+
 ## [1.3.11](https://github.com/poechiang/react-pkg/compare/v1.3.10...v1.3.11) (2024-04-15)
 
 
