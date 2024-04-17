@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.2",
-    "@jeffchi/r-hooks": "*",
+    "r-hooks": "*",
     "color": "^4.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

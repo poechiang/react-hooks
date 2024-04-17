@@ -1,6 +1,6 @@
-import { Button, PresetSize, ScopeProvider, Text, View } from "@jeffchi/r-components";
 import hljs from "highlight.js";
 import "highlight.js/styles/a11y-light.css";
+import { Button, PresetSize, ScopeProvider, Text, View } from "r-components";
 import { useEffect } from "react";
 import "./assets/global.less";
 import reactLogo from "./assets/react.svg";
