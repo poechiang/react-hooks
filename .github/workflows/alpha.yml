@@ -14,9 +14,6 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@v4
         id: version
-        with:
-          release-type: node
-          target-branch: dev
 
       # oupt
       - name: show new version
