@@ -3,7 +3,7 @@ name: npm
 on:
   push:
     branches:
-      - alpha
+      - dev
 jobs:
   release-please:
     runs-on: ubuntu-latest
@@ -18,7 +18,7 @@ jobs:
           release-type: node
           package-name: '@jeffchi/react-pkg'
           bump-patch-for-minor-pre-major: true
-          default-branch: alpha
+          default-branch: alpha-${{ steps.release.outputs.major }}
 
       # Checkout
       - uses: actions/checkout@v3
