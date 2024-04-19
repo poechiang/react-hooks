@@ -1,35 +1,56 @@
-name: Auto Alpha Release
-
+#
+name: npm
 on:
   push:
     branches:
       - dev
-
 jobs:
-  auto-alpha-release:
+  release-please:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Git Version
-        id: get_version
-        uses: codacy/git-version@2.4.0
+      - uses: google-github-actions/release-please-action@v3
+        id: release
         with:
-          # The name of the release branch
-          release-branch: dev
+          release-type: node
+          package-name: '@jeffchi/react-pkg'
+          bump-patch-for-minor-pre-major: true
+          default-branch: alpha
 
-      - name: Create alpha branch
+      # oupt
+      - name: show new version
         run: |
-          version="${{ steps.get_version.outputs.version }}"
-          branch_name="alpha.${version}"
-          git checkout -b $branch_name
-          git push origin $branch_name
+          echo "New version: ${{ steps.release.outputs.new_version }}"
 
-      - name: Create PR
-        uses: peter-evans/create-pull-request@v3
+      # Checkout
+      - uses: actions/checkout@v3
+        if: ${{ steps.release.outputs.release_created }}
+      # Setup node
+      - uses: actions/setup-node@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ steps.get_version.outputs.version }}
-          title: 'Release alpha version ${{ steps.get_version.outputs.version }}'
-          body: 'Automatically created PR for alpha release version ${{ steps.get_version.outputs.version }}'
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+        if: ${{ steps.release.outputs.release_created }}
+
+      # Install dependencies
+      - name: npm install
+        run: npm install
+        if: ${{ steps.release.outputs.release_created }}
+
+      # Install dependencies
+      - name: npm ci
+        run: npm ci
+        if: ${{ steps.release.outputs.release_created }}
+
+      # Build output
+      - name: Build
+        run: npm run build
+        if: ${{ steps.release.outputs.release_created }}
+      # Publish to npm
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
+        if: ${{ steps.release.outputs.release_created }}
