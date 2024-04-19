@@ -12,6 +12,14 @@ jobs:
       pull-requests: write
       repository-projects: write
     steps:
+      # Checkout
+      - uses: actions/checkout@v3
+      # Setup node
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+
       - name: install standard-version
         run: npm install -g standard-version
 
