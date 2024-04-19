@@ -1,0 +1,27 @@
+#
+name: public npm alpha
+on:
+  pulll_request:
+    branches:
+      - alpha/${{ steps.get_version.outputs.version }}
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          release-type: node
+          package-name: '@jeffchi/react-pkg'
+          bump-patch-for-minor-pre-major: true
+
+      - name: Use release-please action
+        uses: google-github-actions/release-please-action@v1
+
+      - name: Get next version
+        id: get_version
+        run: echo "Next version is ${{ steps.release.outputs.version }}"
