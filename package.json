@@ -1,52 +1,84 @@
 {
   "name": "@jeffchi/react-pkg",
   "version": "1.3.11",
-  "git": "https://github.com/poechiang/react-pkg.git",
+  "type": "module",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
   "description": "React 相关工具库",
   "keywords": [
     "react",
     "hooks",
     "components"
   ],
-  "author": "jeffchi <jeffchi@163.com>",
+  "author": "jeffrey·chiang",
+  "git": "https://github.com/poechiang/react-pkg.git",
   "homepage": "https://github.com/poechiang/react-pkg#readme",
   "license": "MIT",
   "scripts": {
-    "dev": "npm run build:watch --workspace=r-components & npm run build:watch --workspace=r-hooks  & npm run dev --workspace=test",
-    "build": "npm run build --workspaces",
-    "preview": "npm run preview --workspaces --if-present"
+    "dev": "vite",
+    "start": "npm run storybook & npm run dev",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006 --config-dir src/.storybook",
+    "build:sb": "storybook build"
   },
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "packages/r-components/dist",
-    "packages/r-hooks/dist"
+    "dist"
   ],
-  "workspaces": [
-    "packages/r-hooks",
-    "packages/r-components",
-    "sites/test"
-  ],
-  "types": "./packages/*/dist/index.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./packages/*/dist/*.es.js",
-      "require": "./packages/*/dist/*.umd.js",
-      "types": "./packages/*/dist/**/*.d.ts"
-    },
-    "./hooks": {
-      "import": "./packages/r-hooks/dist/*.es.js",
-      "require": "./packages/r-hooks/dist/*.umd.js",
-      "types": "./packages/r-hooks/dist/**/*.d.ts"
-    },
-    "./components": {
-      "import": "./packages/r-components/dist/*.es.js",
-      "require": "./packages/r-components/dist/*.umd.js",
-      "types": "./packages/r-components/dist/**/*.d.ts"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
     },
     "./themes/*": {
-      "import": "./packages/*/dist/**/*.less"
+      "import": "./dist/**/*.less"
     }
+  },
+  "dependencies": {
+    "@emotion/is-prop-valid": "^1.2.2",
+    "color": "^4.2.3",
+    "highlight.js": "^11.9.0",
+    "react": "^16.8.0 || 18.x",
+    "react-dom": "^16.8.0 || 18.x",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.3.1",
+    "@storybook/addon-essentials": "^8.0.6",
+    "@storybook/addon-interactions": "^8.0.6",
+    "@storybook/addon-links": "^8.0.6",
+    "@storybook/addon-onboarding": "^8.0.6",
+    "@storybook/blocks": "^8.0.6",
+    "@storybook/react": "^8.0.6",
+    "@storybook/react-vite": "^8.0.6",
+    "@storybook/test": "^8.0.6",
+    "@types/color": "^3.0.6",
+    "@types/node": "^20.12.5",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "eslint-plugin-storybook": "^0.8.0",
+    "json": "^11.0.0",
+    "less": "^4.2.0",
+    "storybook": "^8.0.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.1",
+    "vite-plugin-static-copy": "^1.0.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || 18.x",
+    "react-dom": "^16.8.0 || 18.x",
+    "styled-components": "^6.1.8"
   }
 }
