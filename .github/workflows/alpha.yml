@@ -12,13 +12,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Install release-please
-        run: npm install -g standard-version
-
-      - name: Get next version
+      - name: Git Version
         id: get_version
-        run: npx standard-version
+        uses: codacy/git-version@2.4.0
+        with:
+          # The name of the release branch
+          release-branch: dev
 
       - name: Create alpha branch
         run: |
