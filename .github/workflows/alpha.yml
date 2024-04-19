@@ -18,7 +18,7 @@ jobs:
           release-type: node
           package-name: '@jeffchi/react-pkg'
           bump-patch-for-minor-pre-major: true
-          default-branch: dev
+          default-branch: alpha
 
       # Checkout
       - uses: actions/checkout@v3
