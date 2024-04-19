@@ -12,14 +12,6 @@ jobs:
       pull-requests: write
       repository-projects: write
     steps:
-      - uses: google-github-actions/release-please-action@v4
-        id: version
-
-      # oupt
-      - name: show new version
-        run: |
-          echo "New version: ${{ steps.version.outputs.major }}.${{ steps.version.outputs.minor }}.${{ steps.version.outputs.patch }}"
-
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:
