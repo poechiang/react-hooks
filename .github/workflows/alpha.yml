@@ -12,8 +12,19 @@ jobs:
       pull-requests: write
       repository-projects: write
     steps:
-      - uses: google-github-actions/release-please-action@v4
-        id: release
+      - name: install standard-version
+        run: npm install -g standard-version
+
+      - name: run standard-version
+        id: version
+        run: npx standard-version --prerelease alpha
+
+      # - uses: google-github-actions/release-please-action@v4
+      #  id: release
+      #  with:
+      #    token: ${{ secrets.GITHUB_TOKEN }}
+      #    path: '.'
+      #    release-type: node
 
       - name: show version
-        run: echo ${{ steps.release.outputs.major }}
+        run: echo ${{ steps.version.outputs }}
