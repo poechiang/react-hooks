@@ -3,7 +3,7 @@
 [![release-please-action](https://github.com/poechiang/react-pkg/actions/workflows/release-please.yml/badge.svg?branch=main)](https://github.com/poechiang/react-pkg/actions/workflows/release-please.yml)
 [![NPM](https://github.com/poechiang/react-pkg/actions/workflows/depoly-npm.yml/badge.svg)](https://github.com/poechiang/react-pkg/actions/workflows/depoly-npm.yml)
 
-A library for building React components with styled-components and styled-system.Includes Themes, Hooks & Components.
+一个react库，包括基于Styled的组件及一些通用的三方Hooks
 
 ## 特性
 
