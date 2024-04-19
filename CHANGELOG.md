@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.4.0](https://github.com/poechiang/react-pkg/compare/v1.3.11...v1.4.0) (2024-04-19)
+
+
+### Features
+
+* add npm alpha yml ([8589c31](https://github.com/poechiang/react-pkg/commit/8589c311fd455e9e8c24dff8b5ba3fb0170f7161))
+* add npm alpha yml ([12af578](https://github.com/poechiang/react-pkg/commit/12af578c3b77a1bc5765d137d18253bfff775c02))
+* add release yml ([0893abd](https://github.com/poechiang/react-pkg/commit/0893abd434b7489a84a09cfcfbc087f8f545f08a))
+
+
+### Bug Fixes
+
+* unable to import for use ([6f921e0](https://github.com/poechiang/react-pkg/commit/6f921e0150569a9e1afea4c50200985340a618af))
+* update alpha yml ([2ddf387](https://github.com/poechiang/react-pkg/commit/2ddf3871c42423927e987d06146b0088a81be13f))
+* update alpha yml 10 ([1d6e79d](https://github.com/poechiang/react-pkg/commit/1d6e79da34c2709501ca4df42f16504c3418d9af))
+* update alpha yml 2 ([0787409](https://github.com/poechiang/react-pkg/commit/078740940f88c7a3f902695c2ab7fbe51717dceb))
+* update alpha yml 3 ([938c894](https://github.com/poechiang/react-pkg/commit/938c89457cebe8ae37773c98c6abaca7ae1c929f))
+* update alpha yml 4 ([55d92b1](https://github.com/poechiang/react-pkg/commit/55d92b14b12bf4c4036aa185205a2251a9aada07))
+* update alpha yml 5 ([83872ae](https://github.com/poechiang/react-pkg/commit/83872ae997d9a7a3d69f1d7009b9d88987cb7f0e))
+* update alpha yml 6 ([daab85b](https://github.com/poechiang/react-pkg/commit/daab85b83d907bde262b4b5abf7eea3b6429a982))
+* update alpha yml 7 ([ea6ea38](https://github.com/poechiang/react-pkg/commit/ea6ea3890c9939bbeef657234ee186cd2b068eee))
+* update alpha yml 8 ([9fd065a](https://github.com/poechiang/react-pkg/commit/9fd065aa19b4033a615bb4158276a23f7d3b011e))
+* update alpha yml 9 ([46e9e06](https://github.com/poechiang/react-pkg/commit/46e9e062612911dba7617f915e7e4fd11983f072))
+
 ## [1.3.11](https://github.com/poechiang/react-pkg/compare/v1.3.10...v1.3.11) (2024-04-15)
 
 
