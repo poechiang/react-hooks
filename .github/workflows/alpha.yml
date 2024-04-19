@@ -25,4 +25,4 @@ jobs:
 
       - name: Get next version
         id: get_version
-        run: echo "Next version is ${{ steps.release.outputs.version }}"
+        run: echo "Next version is ${{ steps.get_version.outputs.version }}"
