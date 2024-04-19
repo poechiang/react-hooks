@@ -22,6 +22,8 @@ jobs:
 
       - name: install standard-version
         run: npm install -g standard-version
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: run standard-version
         id: version
