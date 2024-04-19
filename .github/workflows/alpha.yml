@@ -13,17 +13,23 @@ jobs:
       repository-projects: write
     steps:
       - uses: google-github-actions/release-please-action@v4
+        id: version
+        with:
+          release-type: node
+          target-branch: dev
+
+      # oupt
+      - name: show new version
+        run: |
+          echo "New version: ${{ steps.version.outputs.major }}.${{ steps.version.outputs.minor }}.${{ steps.version.outputs.patch }}"
+
+      - uses: google-github-actions/release-please-action@v3
         id: release
         with:
           release-type: node
           package-name: '@jeffchi/react-pkg'
           bump-patch-for-minor-pre-major: true
           default-branch: alpha
-
-      # oupt
-      - name: show new version
-        run: |
-          echo "New version: ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
 
       # Checkout
       - uses: actions/checkout@v3
