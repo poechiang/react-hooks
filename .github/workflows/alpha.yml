@@ -1,28 +1,37 @@
-#
-name: public npm alpha
+name: Auto Alpha Release
+
 on:
   push:
     branches:
       - dev
+
 jobs:
-  release-please:
+  auto-alpha-release:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - uses: google-github-actions/release-please-action@v3
-        id: release
-        with:
-          release-type: node
-          package-name: '@jeffchi/react-pkg'
-          bump-patch-for-minor-pre-major: true
-          default-branch: alpha/${{ steps.get_version.outputs.version }}
+      - name: Use release-please action
+        id: release-please
+        uses: google-github-actions/release-please-action@v1
 
       - name: Get next version
         id: get_version
-        run: echo "Next version is ${{ steps.get_version.outputs.version }}"
+        run: echo "Next version is ${{ steps.release-please.outputs.version }}"
+
+      - name: Create alpha branch
+        run: |
+          version="${{ steps.get_version.outputs.version }}"
+          branch_name="alpha.${version}"
+          git checkout -b $branch_name
+          git push origin $branch_name
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ steps.get_version.outputs.version }}
+          title: 'Release alpha version ${{ steps.get_version.outputs.version }}'
+          body: 'Automatically created PR for alpha release version ${{ steps.get_version.outputs.version }}'
