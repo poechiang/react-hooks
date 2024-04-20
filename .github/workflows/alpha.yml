@@ -24,9 +24,13 @@ jobs:
           # config-file: releases/release-please-config.json
           # optional. customize path to .release-please-manifest.json
           # manifest-file: releases/.release-please-manifest.json
-          skip-github-release: true
+          # skip-github-release: true
           # skip-github-pull-request: true
 
+  output:
+    need: [version]
+    runs-on: ubuntu-latest
+    steps:
       - name: output
         if: ${{ steps.release.outputs.release_created }}
         run: |
