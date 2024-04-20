@@ -1,5 +1,57 @@
 # Changelog
 
+## [1.4.0](https://github.com/poechiang/react-pkg/compare/v1.3.11...v1.4.0) (2024-04-20)
+
+
+### Features
+
+* add npm alpha yml ([8589c31](https://github.com/poechiang/react-pkg/commit/8589c311fd455e9e8c24dff8b5ba3fb0170f7161))
+* add npm alpha yml ([12af578](https://github.com/poechiang/react-pkg/commit/12af578c3b77a1bc5765d137d18253bfff775c02))
+* add release yml ([0893abd](https://github.com/poechiang/react-pkg/commit/0893abd434b7489a84a09cfcfbc087f8f545f08a))
+* rebuild project struction ([86246a2](https://github.com/poechiang/react-pkg/commit/86246a2376f39cad0b1effa8774feb6b2a6bce24))
+
+
+### Bug Fixes
+
+* fix alpha yml 12 ([162a7b9](https://github.com/poechiang/react-pkg/commit/162a7b9c0e10631662f9ad8a935f0584b8bd6366))
+* fix alpha yml 13 ([5eabe46](https://github.com/poechiang/react-pkg/commit/5eabe46a04ea77186350e4a79d2a2091b0d22a51))
+* fix alpha yml 14 ([51f259e](https://github.com/poechiang/react-pkg/commit/51f259e1ac70f9c240e3b54f3ca3395cc219bcef))
+* fix alpha yml 15 ([98698bd](https://github.com/poechiang/react-pkg/commit/98698bde84ed064d7e836e7448c0b0435a44ed81))
+* fix alpha yml 16 ([9ea4d0f](https://github.com/poechiang/react-pkg/commit/9ea4d0ffa6a3d3c20a0198f369436986744e583b))
+* fix alpha yml 17 ([7dd7641](https://github.com/poechiang/react-pkg/commit/7dd7641cb0d34a58b1e6ab073ffbf0d10489f248))
+* fix alpha yml 18 ([51c35d6](https://github.com/poechiang/react-pkg/commit/51c35d6c60e97913bfc8847c36941b47e1d2bb3c))
+* fix alpha yml 19 ([2826f9b](https://github.com/poechiang/react-pkg/commit/2826f9b94da55fd11d603ac0947c36bb2c3011af))
+* fix alpha yml 20 ([9590eb1](https://github.com/poechiang/react-pkg/commit/9590eb19939bc496b5a5bd36ca617291f32c7c5d))
+* fix alpha yml 21 ([b022d27](https://github.com/poechiang/react-pkg/commit/b022d270a0e8dbd3b5c3ea35ea67ce1333329e87))
+* fix alpha yml 22 ([bee4f64](https://github.com/poechiang/react-pkg/commit/bee4f645ea6a94268c6d9e9ffa865226252a3d6d))
+* fix alpha yml 23 ([0cd3d8a](https://github.com/poechiang/react-pkg/commit/0cd3d8a3732d8b7429be3390a9fd1aba47513ce7))
+* fix alpha yml 24 ([ba46420](https://github.com/poechiang/react-pkg/commit/ba46420aa797e20e1cf7dbbb4d203d7ce96232b2))
+* fix alpha yml 25 ([76a6498](https://github.com/poechiang/react-pkg/commit/76a649821c7da35e7d94e270db7ddfe092508102))
+* fix alpha yml 26 ([32c9215](https://github.com/poechiang/react-pkg/commit/32c9215c6399588f84c29e1c0b335c07c408f2f4))
+* fix alpha yml 27 ([e495ac4](https://github.com/poechiang/react-pkg/commit/e495ac4c696369190c0d020ba66ee4516b657f81))
+* fix alpha yml 28 ([ed92e66](https://github.com/poechiang/react-pkg/commit/ed92e661bc6397bf7201a71cff7b3bc6730c5cdc))
+* fix alpha yml 29 ([7577030](https://github.com/poechiang/react-pkg/commit/757703043a1122e23608da972e9d618d86de610f))
+* fix alpha yml 30 ([2d33bf3](https://github.com/poechiang/react-pkg/commit/2d33bf3934c2661955d1ab23c3ebe58541a2b79b))
+* fix alpha yml 31 ([97e513b](https://github.com/poechiang/react-pkg/commit/97e513b84e7a5d9ae5c57d45db2d06d7377fef98))
+* fix alpha yml11 ([e3b1833](https://github.com/poechiang/react-pkg/commit/e3b18336902fb32cfcb336302f0fefc78b94eaa6))
+* unable to import for use ([6f921e0](https://github.com/poechiang/react-pkg/commit/6f921e0150569a9e1afea4c50200985340a618af))
+* update alpha yml ([2ddf387](https://github.com/poechiang/react-pkg/commit/2ddf3871c42423927e987d06146b0088a81be13f))
+* update alpha yml 10 ([1d6e79d](https://github.com/poechiang/react-pkg/commit/1d6e79da34c2709501ca4df42f16504c3418d9af))
+* update alpha yml 11 ([1b02349](https://github.com/poechiang/react-pkg/commit/1b0234998e408525c73eabf0c0102dc29975c2d1))
+* update alpha yml 12 ([3cad707](https://github.com/poechiang/react-pkg/commit/3cad707222e30e7b01bcc8ba5b19e96ca1eb0ee2))
+* update alpha yml 13 ([8553b53](https://github.com/poechiang/react-pkg/commit/8553b53201ef7d345905fb0b0c2a2655a25447df))
+* update alpha yml 14 ([2e18b1d](https://github.com/poechiang/react-pkg/commit/2e18b1db9ecb6f6456761f8ef7ca59948374c6aa))
+* update alpha yml 15 ([aa2a6b1](https://github.com/poechiang/react-pkg/commit/aa2a6b176545c0b6e5d0fa756f9fcac5a6fb345a))
+* update alpha yml 16 ([7901d96](https://github.com/poechiang/react-pkg/commit/7901d961851a312a49653e5b26333108cdf41dc7))
+* update alpha yml 2 ([0787409](https://github.com/poechiang/react-pkg/commit/078740940f88c7a3f902695c2ab7fbe51717dceb))
+* update alpha yml 3 ([938c894](https://github.com/poechiang/react-pkg/commit/938c89457cebe8ae37773c98c6abaca7ae1c929f))
+* update alpha yml 4 ([55d92b1](https://github.com/poechiang/react-pkg/commit/55d92b14b12bf4c4036aa185205a2251a9aada07))
+* update alpha yml 5 ([83872ae](https://github.com/poechiang/react-pkg/commit/83872ae997d9a7a3d69f1d7009b9d88987cb7f0e))
+* update alpha yml 6 ([daab85b](https://github.com/poechiang/react-pkg/commit/daab85b83d907bde262b4b5abf7eea3b6429a982))
+* update alpha yml 7 ([ea6ea38](https://github.com/poechiang/react-pkg/commit/ea6ea3890c9939bbeef657234ee186cd2b068eee))
+* update alpha yml 8 ([9fd065a](https://github.com/poechiang/react-pkg/commit/9fd065aa19b4033a615bb4158276a23f7d3b011e))
+* update alpha yml 9 ([46e9e06](https://github.com/poechiang/react-pkg/commit/46e9e062612911dba7617f915e7e4fd11983f072))
+
 ## [1.3.11](https://github.com/poechiang/react-pkg/compare/v1.3.10...v1.3.11) (2024-04-15)
 
 
