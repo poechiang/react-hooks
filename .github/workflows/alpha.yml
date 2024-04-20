@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: release-please
-        uses: google-github-actions/release-please-action@v4
+        uses: google-github-actions/release-please-action@v3
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
-          target-branch: ${{ github.ref_name }}
+          default-branch: ${{ github.ref_name }}
           # optional. customize path to release-please-config.json
           # config-file: releases/release-please-config.json
           # optional. customize path to .release-please-manifest.json
