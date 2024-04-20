@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/poechiang/react-pkg/compare/v1.11.0...v1.11.1) (2024-04-20)
+
+
+### Bug Fixes
+
+* update alpha rp yml 2 ([e1b65e5](https://github.com/poechiang/react-pkg/commit/e1b65e553e5dd4f171e486b7a48bc20a16ae4eb9))
+
 ## [1.11.0](https://github.com/poechiang/react-pkg/compare/v1.10.0...v1.11.0) (2024-04-20)
 
 
