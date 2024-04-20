@@ -52,6 +52,25 @@ export default () => <Button>Hello World</Button>;
 
 欢迎提交 PR 或者 Issue。
 
+### 提交
+
+- 请确保你的代码符合代码规范。
+- 请确保你的代码通过了测试。
+- 请确保你的代码通过了 lint 检查。
+- 提交规范
+  - fix:它代表错误修复，并与SemVer补丁相关 。
+  - feat:它代表一个新功能，并与 SemVer 次要相关。
+  - feat!:、或fix!:、refactor!:等，它们代表重大更改（由 表示!）并将导致 SemVer 主要。
+
+### 代码规范
+
+- 请确保你的代码符合 [ESLint](https://eslint.org/) 规范。
+- 请确保你的代码符合 [Prettier](https://prettier.io/) 规范。
+
+### 测试
+
+- 请确保你的代码通过了 [Jest](https://jestjs.io/) 测试。
+
 ## 协议
 
 MIT
