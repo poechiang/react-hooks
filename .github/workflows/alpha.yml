@@ -20,6 +20,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           target-branch: ${{ github.ref_name }}
+          prerelease-type": 'beta'
           # optional. customize path to release-please-config.json
           # config-file: releases/release-please-config.json
           # optional. customize path to .release-please-manifest.json
@@ -27,10 +28,6 @@ jobs:
           # skip-github-release: true
           # skip-github-pull-request: true
 
-  output:
-    needs: [version]
-    runs-on: ubuntu-latest
-    steps:
       - name: output
         if: ${{ steps.release.outputs.release_created }}
         run: |
@@ -50,40 +47,3 @@ jobs:
           echo "minor is ${{ steps.release.outputs.minor }}"
           echo "patch is ${{ steps.release.outputs.patch }}"
           echo "sha is ${{ steps.release.outputs.sha }}"
-  publish:
-    needs: [version]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
-    steps:
-      # Checkout
-      - uses: actions/checkout@v3
-        if: ${{ steps.release.outputs.release_created }}
-      # Setup node
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
-        if: ${{ steps.release.outputs.release_created }}
-
-      # Install dependencies
-      - name: npm install
-        run: npm install
-        if: ${{ steps.release.outputs.release_created }}
-
-      # Install dependencies
-      - name: npm ci
-        run: npm ci
-        if: ${{ steps.release.outputs.release_created }}
-
-      # Build output
-      - name: Build
-        run: npm run build
-        if: ${{ steps.release.outputs.release_created }}
-      # Publish to npm
-      - run: npm publish --tag alpha
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
-        if: ${{ steps.release.outputs.release_created }}
