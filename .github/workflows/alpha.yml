@@ -28,7 +28,7 @@ jobs:
           # skip-github-pull-request: true
 
   output:
-    need: [version]
+    needs: [version]
     runs-on: ubuntu-latest
     steps:
       - name: output
