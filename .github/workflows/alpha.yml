@@ -20,29 +20,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           target-branch: ${{ github.ref_name }}
-          config-file: releases/release-please-config-alpha.json
-          manifest-file: releases/.release-please-manifest-alpha.json
-          command: manifest
-          # skip-github-release: true
-          # skip-github-pull-request: true
-
-      - name: output
-        if: ${{ steps.release.outputs.release_created }}
-        run: |
-          echo "Releases created is ${{ steps.release.outputs.releases_created }}"
-          echo "Paths created is ${{ steps.release.outputs.paths_released }}"
-          echo "Prs created is ${{ steps.release.outputs.prs_created }}"
-          echo "pr is ${{ steps.release.outputs.pr }}"
-          echo "prs is ${{ steps.release.outputs.prs }}"
-
-          echo "release_created is ${{ steps.release.outputs.release_created }}"
-          echo "upload_url is ${{ steps.release.outputs.upload_url }}"
-          echo "html_url is ${{ steps.release.outputs.html_url }}"
-          echo "tag_name is ${{ steps.release.outputs.tag_name }}"
-          echo "major is ${{ steps.release.outputs.major }}"
-          echo "minor is ${{ steps.release.outputs.minor }}"
-          echo "patch is ${{ steps.release.outputs.patch }}"
-          echo "sha is ${{ steps.release.outputs.sha }}"
+          # config-file: releases/release-please-config-alpha.json
+          # manifest-file: releases/.release-please-manifest-alpha.json
 
       # Checkout
       - uses: actions/checkout@v3
@@ -69,7 +48,7 @@ jobs:
         run: npm run build
         if: ${{ steps.release.outputs.release_created }}
       # Publish to npm
-      - run: git push --follow-tags && npm publish --tag alpha
+      - run: npm version prerelease &&  git push --follow-tags && npm publish --tag alpha
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
         if: ${{ steps.release.outputs.release_created }}
