@@ -50,11 +50,11 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       # Publish to npm
       - run: |
-        git add -A .
-        git commit -m "chore(release please): release ${{ steps.release.outputs.version }}.apha [skip ci]"
-        npm version prerelease
-        git push --follow-tags
-        npm publish --tag alpha
+          git add -A
+          git commit -m "chore(release please): release ${{ steps.release.outputs.version }}.apha [skip ci]"
+          npm version prerelease
+          git push --follow-tags
+          npm publish --tag alpha
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
         if: ${{ steps.release.outputs.release_created }}
