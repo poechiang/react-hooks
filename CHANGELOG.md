@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.1](https://github.com/poechiang/react-pkg/compare/react-pkg-v1.8.0...react-pkg-v1.8.1) (2024-04-20)
+
+
+### Bug Fixes
+
+* fix alpha yml 45 ([a8c06d6](https://github.com/poechiang/react-pkg/commit/a8c06d6f6f39851458d3487ae2054845fbe833b5))
+* fix alpha yml 46 ([70f744a](https://github.com/poechiang/react-pkg/commit/70f744ab2a5efc9a44d764e7c4300dea084bd99c))
+
 ## [1.8.0](https://github.com/poechiang/react-pkg/compare/react-pkg-v1.7.0...react-pkg-v1.8.0) (2024-04-20)
 
 
