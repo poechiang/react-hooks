@@ -1,6 +1,16 @@
 {
+  "pull-request-header": ":giraffe: A new release is coming up!",
   "include-component-in-tag": false,
-  "release-type": "node",
-  "prerelease-type": "alpha",
-  "prerelease": true
+  "packages": {
+    ".": {
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": true,
+      "draft": false,
+      "prerelease": true,
+      "prerelease-type": "alpha"
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
 }
