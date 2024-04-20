@@ -2,7 +2,8 @@
   "packages": {
     ".": {
       "release-type": "node",
-      "prerelease-type": "alpha"
+      "prerelease-type": "alpha",
+      "prerelease": true
     }
   }
 }
