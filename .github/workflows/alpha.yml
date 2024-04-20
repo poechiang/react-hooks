@@ -50,10 +50,13 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       # Publish to npm
       - run: |
+          git config --global user.email "poechiang@live.cn"
+          git config --global user.name "poechiang"
           git add -A
-          git commit -m "chore(release please): release ${{ steps.release.outputs.version }}.apha [skip ci]"
+          git commit -m "chore(release please): version ${{ steps.release.outputs.version }} [skip ci]"
           npm version prerelease
-          git push --follow-tags
+          git push origin ${{ github.ref_name }}
+          git push --tags
           npm publish --tag alpha
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
