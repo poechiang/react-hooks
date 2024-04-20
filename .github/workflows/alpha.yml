@@ -29,13 +29,6 @@ jobs:
 
       - name: output
         run: |
-          echo "==========output==============="
-          echo "Releases created is ${{ steps.release.outputs.releases_created }}"
-          echo "Paths created is ${{ steps.release.outputs.paths_released }}"
-          echo "Prs created is ${{ steps.release.outputs.prs_created }}"
-          echo "pr is ${{ steps.release.outputs.pr }}"
-          echo "prs is ${{ steps.release.outputs.prs }}"
-
           echo "==========root==============="
           echo "release_created is ${{ steps.release.outputs.release_created }}"
           echo "upload_url is ${{ steps.release.outputs.upload_url }}"
