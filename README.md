@@ -1,7 +1,10 @@
 # @jeffchi/react-pkg
 
 [![release-please-action](https://github.com/poechiang/react-pkg/actions/workflows/release-please.yml/badge.svg?branch=main)](https://github.com/poechiang/react-pkg/actions/workflows/release-please.yml)
-[![NPM](https://github.com/poechiang/react-pkg/actions/workflows/depoly-npm.yml/badge.svg)](https://github.com/poechiang/react-pkg/actions/workflows/depoly-npm.yml)
+[![Release to NPM](https://github.com/poechiang/react-pkg/actions/workflows/release-please.yml/badge.svg)](https://github.com/poechiang/react-pkg/actions/workflows/release-please.yml)
+[![release-please-alpha](https://github.com/poechiang/react-pkg/actions/workflows/alpha.yml/badge.svg)](https://github.com/poechiang/react-pkg/actions/workflows/alpha.yml)
+[![release-please-beta](https://github.com/poechiang/react-pkg/actions/workflows/beta.yml/badge.svg)](https://github.com/poechiang/react-pkg/actions/workflows/beta.yml)
+[![release-please-rc](https://github.com/poechiang/react-pkg/actions/workflows/rc.yml/badge.svg)](https://github.com/poechiang/react-pkg/actions/workflows/rc.yml)
 
 一个react库，包括基于Styled的组件及一些通用的三方Hooks
 
