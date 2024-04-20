@@ -1,24 +1,28 @@
-#
-name: npm
 on:
   push:
     branches:
-      - main
+      - release/*-rc
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release-please-rc
+env:
+  ACTION_NAME: release-please-action
 jobs:
-  release-please:
+  version:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
     steps:
-      - uses: google-github-actions/release-please-action@v3
+      - name: release-please
+        uses: google-github-actions/release-please-action@v4
         id: release
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target-branch: ${{ github.ref_name }}
           release-type: node
-          package-name: '@jeffchi/react-pkg'
-          bump-patch-for-minor-pre-major: true
-          default-branch: main
+          # config-file: releases/release-please-config.json
+          # manifest-file: releases/.release-please-manifest.json
 
       # Checkout
       - uses: actions/checkout@v3
@@ -45,7 +49,14 @@ jobs:
         run: npm run build
         if: ${{ steps.release.outputs.release_created }}
       # Publish to npm
-      - run: npm publish
+      - run: |
+          git config --global user.email "poechiang@live.cn"
+          git config --global user.name "poechiang"
+          git add -A
+          git commit -m "chore(release please): version ${{ steps.release.outputs.version }} [skip ci]"
+          npm version prerelease --preid rc
+          git push origin ${{ github.ref_name }} --follow-tags
+          npm publish --tag rc
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
         if: ${{ steps.release.outputs.release_created }}
