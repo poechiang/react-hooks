@@ -20,7 +20,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           target-branch: ${{ github.ref_name }}
-          prerelease-type": 'beta'
+          prerelease-type": 'alpha'
+          prerelease: true
           # optional. customize path to release-please-config.json
           # config-file: releases/release-please-config.json
           # optional. customize path to .release-please-manifest.json
