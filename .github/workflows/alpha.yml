@@ -49,7 +49,7 @@ jobs:
         run: npm run build
         if: ${{ steps.release.outputs.release_created }}
       # Publish to npm
-      - run: npm version prerelease &&  git push --follow-tags && npm publish --tag alpha
+      - run: npm version prerelease && npm publish --tag alpha
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
         if: ${{ steps.release.outputs.release_created }}
