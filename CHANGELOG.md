@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/poechiang/react-pkg/compare/v1.6.0...v1.7.0) (2024-04-20)
+
+
+### Features
+
+* add release config ([f2e73c9](https://github.com/poechiang/react-pkg/commit/f2e73c90eb136905786c5c578c9ccdd9a37261ca))
+
+
+### Bug Fixes
+
+* fix alpha yml 39 ([e681c1a](https://github.com/poechiang/react-pkg/commit/e681c1a24c75e2eb4ed608c3509969197052c470))
+
 ## [1.6.0](https://github.com/poechiang/react-pkg/compare/v1.5.0...v1.6.0) (2024-04-20)
 
 
