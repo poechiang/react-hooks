@@ -24,7 +24,7 @@ jobs:
         run: npm run build
       - name: commit
         run: |-
-          set -e
+          set -e -f
           # get current commit hash
           CURRENT_HASH=$(git rev-parse HEAD)
           # get last commit hash of last build dist
