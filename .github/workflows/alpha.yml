@@ -3,6 +3,10 @@ on:
     branches:
       - alpha
   workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+
 name: release-please-alpha
 env:
   ACTION_NAME: release-please-action
@@ -48,7 +52,7 @@ jobs:
       - name: Create PR with dist
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.ACTIONS_BOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Build dist
           author: 'actions-bot <github-actions-bot@google.com>'
           title: 'chore: build dist'
@@ -93,7 +97,7 @@ jobs:
       - id: release-pr
         uses: google-github-actions/release-please-action@main
         with:
-          token: ${{ secrets.ACTIONS_BOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           fork: true
           skip-github-release: true
