@@ -49,11 +49,11 @@ jobs:
         run: npm run build
         if: ${{ steps.release.outputs.release_created }}
       # Publish to npm
-      - run: :
+      - run: |
         git add -A .
         git commit -m "chore(release please): release ${{ steps.release.outputs.version }}.apha [skip ci]"
-        git push origin HEAD:${{ github.ref_name }}
         npm version prerelease
+        git push --follow-tags
         npm publish --tag alpha
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
