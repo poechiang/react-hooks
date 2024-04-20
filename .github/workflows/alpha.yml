@@ -22,7 +22,7 @@ jobs:
           target-branch: ${{ github.ref_name }}
           config-file: releases/release-please-config-alpha.json
           manifest-file: releases/.release-please-manifest-alpha.json
-          skip-github-release: true
+          # skip-github-release: true
           # skip-github-pull-request: true
 
       - name: output
