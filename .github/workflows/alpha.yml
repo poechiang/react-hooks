@@ -1,8 +1,7 @@
 on:
   push:
     branches:
-      - alpha
-  workflow_dispatch:
+      - alpha2/*
 permissions:
   contents: write
   pull-requests: write
@@ -19,6 +18,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
+          target-branch: ${{ github.ref_name }}
           # optional. customize path to release-please-config.json
           # config-file: releases/release-please-config.json
           # optional. customize path to .release-please-manifest.json
@@ -27,4 +27,20 @@ jobs:
           skip-github-pull-request: true
 
       - name: output
-        run: echo "Next version is ${{ steps.release.outputs.version }}"
+        run: |
+          echo "==========output==============="
+          echo "Releases created is ${{ steps.release.outputs.releases_created }}"
+          echo "Paths created is ${{ steps.release.outputs.paths_released }}"
+          echo "Prs created is ${{ steps.release.outputs.prs_created }}"
+          echo "pr is ${{ steps.release.outputs.pr }}"
+          echo "prs is ${{ steps.release.outputs.prs }}"
+
+          echo "==========root==============="
+          echo "release_created is ${{ steps.release.outputs.release_created }}"
+          echo "upload_url is ${{ steps.release.outputs.upload_url }}"
+          echo "html_url is ${{ steps.release.outputs.html_url }}"
+          echo "tag_name is ${{ steps.release.outputs.tag_name }}"
+          echo "major is ${{ steps.release.outputs.major }}"
+          echo "minor is ${{ steps.release.outputs.minor }}"
+          echo "patch is ${{ steps.release.outputs.patch }}"
+          echo "sha is ${{ steps.release.outputs.sha }}"
