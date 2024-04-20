@@ -18,13 +18,11 @@ jobs:
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: node
           target-branch: ${{ github.ref_name }}
-          prerelease: 'alpha'
           # optional. customize path to release-please-config.json
-          # config-file: releases/release-please-config.json
+          config-file: releases/release-please-config-alpha.json
           # optional. customize path to .release-please-manifest.json
-          # manifest-file: releases/.release-please-manifest.json
+          manifest-file: releases/.release-please-manifest-alpha.json
           # skip-github-release: true
           # skip-github-pull-request: true
 
