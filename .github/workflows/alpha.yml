@@ -25,7 +25,7 @@ jobs:
           # optional. customize path to .release-please-manifest.json
           # manifest-file: releases/.release-please-manifest.json
           skip-github-release: true
-          skip-github-pull-request: true
+          # skip-github-pull-request: true
 
       - name: output
         if: ${{ steps.release.outputs.release_created }}
