@@ -28,6 +28,7 @@ jobs:
           # skip-github-pull-request: true
 
       - name: output
+        if: ${{ steps.release.outputs.release_created }}
         run: |
           echo "==========root==============="
           echo "release_created is ${{ steps.release.outputs.release_created }}"
