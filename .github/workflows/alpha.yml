@@ -25,3 +25,6 @@ jobs:
           manifest-file: releases/.release-please-manifest.json
           skip-github-release: true
           skip-github-pull-request: true
+
+      - name: output
+        run: echo "Next version is ${{ steps.release.outputs.version }}"
