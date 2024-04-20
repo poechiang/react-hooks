@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - alpha2/*
+  workflow_dispatch:
 permissions:
   contents: write
   pull-requests: write
@@ -29,14 +30,12 @@ jobs:
       - name: output
         if: ${{ steps.release.outputs.release_created }}
         run: |
-          echo "==========output==============="
           echo "Releases created is ${{ steps.release.outputs.releases_created }}"
           echo "Paths created is ${{ steps.release.outputs.paths_released }}"
           echo "Prs created is ${{ steps.release.outputs.prs_created }}"
           echo "pr is ${{ steps.release.outputs.pr }}"
           echo "prs is ${{ steps.release.outputs.prs }}"
 
-          echo "==========root==============="
           echo "release_created is ${{ steps.release.outputs.release_created }}"
           echo "upload_url is ${{ steps.release.outputs.upload_url }}"
           echo "html_url is ${{ steps.release.outputs.html_url }}"
@@ -45,3 +44,33 @@ jobs:
           echo "minor is ${{ steps.release.outputs.minor }}"
           echo "patch is ${{ steps.release.outputs.patch }}"
           echo "sha is ${{ steps.release.outputs.sha }}"
+
+      # Checkout
+      - uses: actions/checkout@v3
+        if: ${{ steps.release.outputs.release_created }}
+      # Setup node
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+        if: ${{ steps.release.outputs.release_created }}
+
+      # Install dependencies
+      - name: npm install
+        run: npm install
+        if: ${{ steps.release.outputs.release_created }}
+
+      # Install dependencies
+      - name: npm ci
+        run: npm ci
+        if: ${{ steps.release.outputs.release_created }}
+
+      # Build output
+      - name: Build
+        run: npm run build
+        if: ${{ steps.release.outputs.release_created }}
+      # Publish to npm
+      - run: git push --follow-tags && npm publish --tag alpha
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
+        if: ${{ steps.release.outputs.release_created }}
