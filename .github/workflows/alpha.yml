@@ -21,6 +21,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           target-branch: ${{ github.ref_name }}
           release-type: node
+          prerelease: true
+          prerelease-type: alpha
           # config-file: releases/release-please-config-alpha.json
           # manifest-file: releases/.release-please-manifest-alpha.json
 
@@ -52,10 +54,7 @@ jobs:
       - run: |
           git config --global user.email "poechiang@live.cn"
           git config --global user.name "poechiang"
-          git add -A
-          git commit -m "chore(release please): version ${{ steps.release.outputs.version }} [skip ci]"
           npm version prerelease --preid alpha
-          git push origin ${{ github.ref_name }} --follow-tags
           npm publish --tag alpha
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
