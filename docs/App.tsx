@@ -1,5 +1,5 @@
 import hljs from 'highlight.js';
-import 'highlight.js/styles/a11y-light.css';
+import 'highlight.js/styles/a11y-dark.css';
 import { useEffect } from 'react';
 import { Button, PresetSize, ScopeProvider, Text, View } from '../src/components';
 import viteLogo from './../public/vite.svg';

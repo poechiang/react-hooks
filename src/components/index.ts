@@ -1,5 +1,6 @@
 import { updateThemeVariable } from './ScopeProvider/utils';
 
+export * from './AuthProvider';
 export * from './ScopeProvider';
 
 export * from './Button';

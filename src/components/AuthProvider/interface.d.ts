@@ -4,9 +4,11 @@ declare interface IAuthData {
 }
 declare interface IAuthContext extends IAuthData {
   signin: (data: ILoginData) => Promise<IAuthData>;
+  check: () => Promise<boolean>;
   signout: () => Promise<void>;
 }
 
 declare interface RSAuthProviderProps extends RSProviderProps {
   onSignin: () => Promise;
+  onCheck: () => Promise;
 }

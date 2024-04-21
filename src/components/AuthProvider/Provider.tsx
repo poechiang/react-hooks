@@ -4,7 +4,7 @@ const KEY_LOGIN_USER_INFO = 'loginUserInfo';
 const KEY_LOGIN_USER_TOKEN = 'token';
 export const AuthContext = createContext<IAuthContext>(null!);
 
-export const AuthProvider: FC<RSAuthProviderProps> = ({ onSignin, children }) => {
+export const AuthProvider: FC<RSAuthProviderProps> = ({ onSignin, onCheck, children }) => {
   const { local, session } = useStorage();
   const u = session(KEY_LOGIN_USER_INFO) || null;
   const [user, setUser] = useState(u || null!);
@@ -28,7 +28,5 @@ export const AuthProvider: FC<RSAuthProviderProps> = ({ onSignin, children }) =>
     session(KEY_LOGIN_USER_INFO, null);
   };
 
-  return <AuthContext.Provider value={{ user, signin, signout }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ user, signin, signout, check: onCheck }}>{children}</AuthContext.Provider>;
 };
-
-export default void 0;
