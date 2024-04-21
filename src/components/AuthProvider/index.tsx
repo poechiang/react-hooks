@@ -1,14 +1,10 @@
-import { withFetcher } from '@jeffchi/fetchjs';
-import { withTags } from '@jeffchi/logger';
-import { createContext, FC, PropsWithChildren, useState } from 'react';
+import { createContext, FC, useState } from 'react';
 import { useStorage } from '../../hooks';
 const KEY_LOGIN_USER_INFO = 'loginUserInfo';
 const KEY_LOGIN_USER_TOKEN = 'token';
-const { log } = withTags('AuthProvider');
-log(123);
 export const AuthContext = createContext<IAuthContext>(null!);
 
-export const AuthProvider: FC<PropsWithChildren> = ({ onSignin, children }) => {
+export const AuthProvider: FC<RSAuthProviderProps> = ({ onSignin, children }) => {
   const { local, session } = useStorage();
   const u = session(KEY_LOGIN_USER_INFO) || null;
   const [user, setUser] = useState(u || null!);
@@ -16,16 +12,14 @@ export const AuthProvider: FC<PropsWithChildren> = ({ onSignin, children }) => {
   const signin = async ({ token }: { token: string }) => {
     local(KEY_LOGIN_USER_TOKEN, token);
 
-    const { get } = withFetcher();
-    const res = await get('/auth/me', null, { enableResultPrompt: false }); // 获取当前登录用户信息;
-    if (res.code !== 0) {
+    const user = await onSignin();
+    if (user) {
       return null!;
     }
-    const loginUser = res.payload;
-    setUser(loginUser);
+    setUser(user);
 
-    session(KEY_LOGIN_USER_INFO, loginUser);
-    return { user: loginUser };
+    session(KEY_LOGIN_USER_INFO, user);
+    return { user };
   };
 
   const signout = async () => {
