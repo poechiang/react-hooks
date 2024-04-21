@@ -4,7 +4,7 @@
   "type": "module",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
-  "description": "React 相关工具库",
+  "description": "用于使用 styled-components 和 styled-system 构建 React 组件的库。包括主题、挂钩和组件。",
   "keywords": [
     "react",
     "hooks",

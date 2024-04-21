@@ -1,14 +1,11 @@
 import { merge } from 'lodash';
 import { FC, useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { ThemeContext } from '../../hooks';
 import { checkDark } from '../common';
 import { DefaultDarkThemes, DefaultLightThemes } from './tokens';
-import { ThemeContext } from './useScope';
 
-export const ScopeProvider: FC<RSThemeProviderProps> = ({
-  children,
-  ...props
-}) => {
+export const ScopeProvider: FC<RSThemeProviderProps> = ({ children, ...props }) => {
   const [themeMapInst, setThemeMapInst] = useState<StyledThemes>({
     default: {
       light: DefaultLightThemes,
@@ -27,10 +24,7 @@ export const ScopeProvider: FC<RSThemeProviderProps> = ({
       setColoringKey(coloring);
     }
   };
-  const register = async (
-    coloring: ColoringKey,
-    tokens: Record<ThemeKey, StyledThemeToken>,
-  ) => {
+  const register = async (coloring: ColoringKey, tokens: Record<ThemeKey, StyledThemeToken>) => {
     themeMapInst[coloring] = tokens;
     setThemeMapInst({ ...themeMapInst });
   };

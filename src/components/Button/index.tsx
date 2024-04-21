@@ -1,16 +1,10 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { useClassName } from '../../hooks';
+import { useClassNames } from '../../hooks';
 import { DefaultDarkThemes, DefaultLightThemes } from '../ScopeProvider/tokens';
 import { checkDark } from '../common';
 import { radiusProps } from '../common/props';
-import {
-  backgroundColorHoverProps,
-  backgroundColorProps,
-  borderProps,
-  colorProps,
-  heightProps,
-} from './props';
+import { backgroundColorHoverProps, backgroundColorProps, borderProps, colorProps, heightProps } from './props';
 
 const StyledButton = styled.button<StyledButtonProps>`
   border: ${borderProps};
@@ -29,18 +23,10 @@ const StyledButton = styled.button<StyledButtonProps>`
   }
 `;
 
-export const Button: FC<ButtonProps> = ({
-  type = 'default',
-  htmlType = 'button',
-  children,
-  ...props
-}) => {
-  const className = useClassName(props);
+export const Button: FC<ButtonProps> = ({ type = 'default', htmlType = 'button', children, ...props }) => {
+  const className = useClassNames(props);
   return (
-    <StyledButton
-      type={htmlType}
-      {...{ ...props, className, styledType: type }}
-    >
+    <StyledButton type={htmlType} {...{ ...props, className, styledType: type }}>
       {children}
     </StyledButton>
   );

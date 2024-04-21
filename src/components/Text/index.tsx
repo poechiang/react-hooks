@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useClassName } from '../../hooks';
+import { useClassNames } from '../../hooks';
 import { DefaultDarkThemes, DefaultLightThemes } from '../ScopeProvider/tokens';
 import { checkDark } from '../common';
 import { colorProps, fontSizeProps, textAlignProps } from './props';
@@ -12,17 +12,8 @@ const StyledText = styled.span<TextProps>`
   margin-block-start: ${(props) => (props.role === 'title' ? 0 : null)};
 `;
 
-export const Text: FC<TextProps> = ({
-  children,
-  role,
-  level,
-  prefix,
-  suffix,
-  unit,
-  semi,
-  ...props
-}) => {
-  const className = useClassName(props);
+export const Text: FC<TextProps> = ({ children, role, level, prefix, suffix, unit, semi, ...props }) => {
+  const className = useClassNames(props);
   const [roleDom, setRoleDom] = useState<string>('span');
   useEffect(() => {
     let dom = { text: 'span', label: 'label', title: 'h' }[role ?? 'text'];
