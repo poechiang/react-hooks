@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.12.0](https://github.com/poechiang/react-pkg/compare/v1.11.2...v1.12.0) (2024-04-21)
+
+
+### Features
+
+* add beta & rc release action ([4c3fd1a](https://github.com/poechiang/react-pkg/commit/4c3fd1a7f5afcdda82aca399e7e4ff859ed2846d))
+
+
+### Bug Fixes
+
+* update alpha rp yml 5 ([5f093b2](https://github.com/poechiang/react-pkg/commit/5f093b2561d028518d27e8bba1b4c4ec760e459d))
+
 ## [1.11.2](https://github.com/poechiang/react-pkg/compare/v1.11.1...v1.11.2) (2024-04-20)
 
 
