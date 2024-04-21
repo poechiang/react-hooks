@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.2",
-    "@jeffchi/fetchjs": "^1.0.1-alpha.0",
+    "@jeffchi/fetchjs": "^1.5.0",
     "color": "^4.2.3",
     "highlight.js": "^11.9.0",
     "react": "^16.8.0 || 18.x",
