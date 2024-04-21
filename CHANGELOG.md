@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.13.1](https://github.com/poechiang/react-pkg/compare/v1.13.0...v1.13.1) (2024-04-21)
+
+
+### Bug Fixes
+
+* Update alpha.yml ([3f1ecc6](https://github.com/poechiang/react-pkg/commit/3f1ecc67a31e6a53969604d4198bf513bd3d8840))
+* Update beta.yml ([d948946](https://github.com/poechiang/react-pkg/commit/d948946e460917f530d86d7b374a997a88d8f7b0))
+* update fetchjs version ([96edf83](https://github.com/poechiang/react-pkg/commit/96edf83ef0586e4fdc9ac47cd0976e030599ec05))
+* update gitingore ([558084b](https://github.com/poechiang/react-pkg/commit/558084b711980f11d294d28a3a4c198053beaa7d))
+* update gitingore ([f6aa137](https://github.com/poechiang/react-pkg/commit/f6aa137ced4cc729a5cd06581aba105513f63750))
+* Update rc.yml ([0c0ea2d](https://github.com/poechiang/react-pkg/commit/0c0ea2dc8501e5301b6dbdf756074591983ca843))
+
 ## [1.13.0](https://github.com/poechiang/react-pkg/compare/v1.12.0...v1.13.0) (2024-04-21)
 
 
